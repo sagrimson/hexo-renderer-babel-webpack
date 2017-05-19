@@ -46,14 +46,14 @@ var renderer = function(data, options, callback) {
   config = extend(config, {
     entry: entry,
     module: {
-        loaders: [
-            {
-                test: /\.js$/,
-                loader: 'babel-loader',
-                query: {
-                    presets: [ 'es2015' ]
-                }
+        rules: [
+          {
+            test: /\.jsx$/,
+            loader: "babel-loader", // Do not use "use" here
+            options: {
+              // ...
             }
+          }
         ]
     },
     output: {
